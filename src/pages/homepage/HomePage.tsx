@@ -1,59 +1,45 @@
 import React from "react";
-import axios from "axios";
+import { getKanji, getAllKanji } from "../../Services/Services";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import DetailsPage from "../DetailsPage/DetailsPage";
+import { Link } from "react-router-dom";
 
-const uniqid = require("uniqid");
-
-const apiURL = "https://kanjiapi.dev/v1/kanji/all";
-
-const HomePage: React.FC = () => {
-  //useStates
+const HomePage = () => {
+  //state
   const [data, setData] = useState([]);
-  const [kanjiID, setKanjiID] = useState(0);
-  //useEffect to  fetch API data
+  const [kanjiId, setKanjiId] = useState("");
+
   useEffect(() => {
-    //axios call
-    const fetchKanji = async () => {
-      const response = await axios.get(`${apiURL}`);
-      console.log(response);
-      const kanjiData = response.data;
-      console.log(kanjiData);
-      setData(kanjiData);
+    const allKanjiService = async () => {
+      const fetchData = await getAllKanji();
+      /* console.log(fetchData); */
+      setData(fetchData);
     };
-    fetchKanji();
+
+    allKanjiService();
   }, []);
 
-  //grabbing the kanji details
-  const getDetails = (id: any) => {
-    setKanjiID(id);
-    console.log("got the id", id);
+  const getItem = async (kanji: any) => {
+    const fetchItem = await getKanji(kanji);
+    console.log("the data", fetchItem);
+    setKanjiId(fetchItem);
   };
 
   return (
     <div>
-      <div className="search-box">
-        <input type="text" placeholder="Search Kanji" />
-      </div>
-      {data.slice(0, 10).map((kanji, kanjiId) => {
-        kanjiId = uniqid();
-
+      <p>home</p>
+      {data.slice(0, 10).map((kanji) => {
         return (
-          <p key={kanjiId}>
-            <button
-              key={kanjiId}
-              onClick={() => {
-                getDetails(kanjiId);
-              }}
-            >
-              <Link to={`/${kanji}`}>Kanji:{kanji}</Link>
-            </button>
-          </p>
+          <div key={kanji}>
+            <p>
+              <button onClick={() => getItem(kanji)}>
+                <Link to={`/${kanji}`}>{kanji}</Link>
+              </button>
+            </p>
+          </div>
         );
       })}
-
-      {console.log(kanjiID)}
+      <DetailsPage Kanji={kanjiId} data={data} />
     </div>
   );
 };

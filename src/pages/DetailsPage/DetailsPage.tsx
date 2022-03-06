@@ -1,21 +1,18 @@
-import React from "react";
-/* import { useState, useEffect } from "react";
-import axios from "axios"; */
+import React, { useEffect, useState } from 'react';
 
-const DetailsPage = ({data}:any) => {
-  /* useEffect(() => {
-    axios.get(`https://kanjiapi.dev/v1/kanji/:id`)
-    .then((response) => {
-      const specificKanji = response.data;
-      console.log("specific kanji", specificKanji);
-    });
-  }, []); */
 
-  return (
-    <div>
-      <p>Kanji</p>
-    </div>
-  );
-};
+const DetailsPage = ({kanjiId, data}:any) => {
+
+ const [listItem, setlistItem] = useState("")
+console.log("kanjiID", {kanjiId})
+    useEffect(() => {
+    
+     setlistItem(kanjiId)
+     console.log("listed Item", listItem)
+    }, [])
+
+return <p>item: {listItem}</p>
+
+}
 
 export default DetailsPage;
