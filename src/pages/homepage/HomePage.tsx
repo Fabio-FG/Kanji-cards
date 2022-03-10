@@ -1,46 +1,20 @@
 import React from "react";
-import { getKanji, getAllKanji } from "../../Services/Services";
-import { useState, useEffect } from "react";
-import DetailsPage from "../DetailsPage/DetailsPage";
 import { Link } from "react-router-dom";
+import useFetch from "../../useFetch";
+import KanjiList from "../../components/KanjiList/KanjiList";
 
-const HomePage = () => {
-  //state
-  const [data, setData] = useState([]);
-  const [kanjiId, setKanjiId] = useState("");
+ const HomePage = () => {
+  //custom hook to fetch data
+   const { data, isPending, error,} = useFetch("https://kanjiapi.dev/v1/kanji/all");
 
-  useEffect(() => {
-    const allKanjiService = async () => {
-      const fetchData = await getAllKanji();
-      /* console.log(fetchData); */
-      setData(fetchData);
-    };
-
-    allKanjiService();
-  }, []);
-
-  const getItem = async (kanji: any) => {
-    const fetchItem = await getKanji(kanji);
-    console.log("the data", fetchItem);
-    setKanjiId(fetchItem);
-  };
-
+  
   return (
-    <div>
+    <>
       <p>home</p>
-      {data.slice(0, 10).map((kanji) => {
-        return (
-          <div key={kanji}>
-            <p>
-              <button onClick={() => getItem(kanji)}>
-                <Link to={`/${kanji}`}>{kanji}</Link>
-              </button>
-            </p>
-          </div>
-        );
-      })}
-      <DetailsPage Kanji={kanjiId} data={data} />
-    </div>
+      {error && <div>{error}</div>}
+      {isPending && <div>Loading...</div>}
+      {data && <KanjiList {...data!} />}
+    </>
   );
 };
 

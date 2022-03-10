@@ -1,18 +1,11 @@
-import React, { useEffect, useState } from 'react';
 
+import { useParams } from "react-router-dom";
 
-const DetailsPage = ({kanjiId, data}:any) => {
+const DetailsPage = () => {
 
- const [listItem, setlistItem] = useState("")
-console.log("kanjiID", {kanjiId})
-    useEffect(() => {
-    
-     setlistItem(kanjiId)
-     console.log("listed Item", listItem)
-    }, [])
-
-return <p>item: {listItem}</p>
-
-}
+   //useParams to grab the id
+   const { kanji } = useParams() 
+  return <p>item: {kanji}</p>;
+};
 
 export default DetailsPage;

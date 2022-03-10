@@ -1,7 +1,6 @@
 import axios from "axios";
 
 
-
 export async function getAllKanji() {
  try {
      const response = await axios.get('https://kanjiapi.dev/v1/kanji/all')
