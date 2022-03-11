@@ -10,9 +10,9 @@ import KanjiList from "../../components/KanjiList/KanjiList";
   
   return (
     <>
-      <p>home</p>
+      
       {error && <div>{error}</div>}
-      {isPending && <div>Loading...</div>}
+      {!isPending && <div>Loading...</div>}
       {data && <KanjiList {...data!} />}
     </>
   );

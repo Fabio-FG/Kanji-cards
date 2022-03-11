@@ -15,7 +15,8 @@ export async function getAllKanji() {
 export async function getKanji(kanji:string) {
     try {
         const response = await axios.get(`https://kanjiapi.dev/v1/kanji/${kanji}`)
-        let result = response.data;
+        let result = response;
+        console.log("the result", result)
         return result;
     } catch (error) {
         return "There was an error"
