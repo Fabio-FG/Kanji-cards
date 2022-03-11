@@ -1,36 +1,37 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../../useFetch";
+import { getKanji } from "../../Services/Services";
+
+
 
 const DetailsPage = () => {
   //useParams to grab the id
   const { kanji } = useParams();
-  const [details, setDetails] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+  const [details, setDetails] = useState<Record<string, never>>({});
 
-  const {
-    data: kanjiDetail,
-    isPending,
-    error,
-  } = useFetch(`https://kanjiapi.dev/v1/kanji/${kanji}`);
+  useEffect(() => {
+    const getKanjiItem = () => {
+       getKanji(kanji as string).then((result) => {
+        console.log("result", result);
+        let results = result;
+        setDetails(results);
+      });
+    };
 
-  console.log(kanjiDetail.data)
- 
+    getKanjiItem();
+  }, []);
 
   return (
     <>
-      {isPending && <div>Loading..</div>}
-      {error && <div>There was an Error</div>}
-      
-      {kanjiDetail && <p>Kanji: {kanjiDetail.data.kanji}</p>}
-      {kanjiDetail && <p>Grade: {kanjiDetail.data.grade}</p>}
-      {kanjiDetail && <p>Readings: {kanjiDetail.data.name_readings}</p>}
-      {kanjiDetail && <p>Onyomi Readings: {kanjiDetail.data.on_readings}</p>}
-      {kanjiDetail && <p>Kunoymi Readings: {kanjiDetail.data.kun_readings}</p>}
-      {kanjiDetail && <p>JLPT level: {kanjiDetail.data.jlpt}</p>}
-      {kanjiDetail && <p>English Heisig: {kanjiDetail.data.heisig_en}</p>}
-      {kanjiDetail && <p>Meanings: {kanjiDetail.data.meanings.map((el:any) => {
-        return <div>{el}</div>
-      })}</p>}
+      <div>Kanji: {details.kanji}</div>
+      <div>Grade: {details.grade}</div>
+      <div>Stroke Count: {details.stroke_count}</div>
+      <div>Kun readings: {details.kun_readings}</div>
+      <div>On readings: {details.on_readings}</div>
+      <div>Meanings: {details.meanings}</div>
+      <div>JLPT level: {details.jlpt}</div>
     </>
   );
 };

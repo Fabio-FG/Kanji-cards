@@ -14,11 +14,10 @@ const KanjiList = ({ data }: any) => {
           // finding a random kanji out of the data set.
           const randomIndex = Math.floor(Math.random() * data.length);
           let randomKanji = data[randomIndex];
-          
+
           //pushing a random kanji to a new array until there are 6 random kanji
           randomArr.push(randomKanji);
         }
-        ;
         //set the kanji state to have the 6 kanji!
         setRandomKanji(randomArr);
       } catch (error) {}
@@ -34,7 +33,7 @@ const KanjiList = ({ data }: any) => {
       <div>
         <div>
           the random six kanji:
-          {randomKanji.map((kanji: any, idx:number) => {
+          {randomKanji.map((kanji: any, idx: number) => {
             return (
               <div key={kanji}>
                 <Link to={`/${kanji}`}> {kanji} </Link>
