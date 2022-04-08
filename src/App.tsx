@@ -4,15 +4,15 @@ import HomePage from "./pages/HomePage/HomePage";
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import DetailsPage from "./pages/DetailsPage/DetailsPage";
 import Sidebar from "./components/Sidebar/Sidebar";
+import Navbar from "./components/structure/Navbar/Navbar";
 
 function App() {
   return (
     <Router>
-      <Sidebar children={""} />
       <div className="App">
+        <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
-
           <Route path="/:kanji" element={<DetailsPage />} />
         </Routes>
       </div>
