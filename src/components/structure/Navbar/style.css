@@ -26,18 +26,41 @@
 }
 
 .hamburguerIcon {
-    margin-right: 20px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.desktopHeader{
+    display: none;
 }
 
 .authBtn{
     background-color: rgb(36, 33, 33);
     color: white;
-    margin: 5px;
-    width: 100px;
-    height: 30px;
+    width: 110px;
+    height: 35px;
+    margin: 10px;
+    
 }
 
-.aboutLink {
-    margin: 25px;
-    font-size: 1.8em;
+.aboutLink{
+    text-transform:uppercase;
+
+}
+
+
+@media screen and (min-width:928px){
+    .hamburguerIcon {
+        display: none;
+    }
+
+    .desktopHeader{
+        display: flex;
+        align-items: center;
+        font-size: 1.3rem;
+    }
+
+    .aboutLink{
+        margin-right: 17px;
+    }
 }
