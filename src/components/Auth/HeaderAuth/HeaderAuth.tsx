@@ -15,7 +15,7 @@ const HeaderAuth = () => {
 
   return (
     <>
-    {openModal && <AuthModal props={{openModal, setOpenModal}}/>}
+    {openModal && <AuthModal setOpenModal={ setOpenModal}/>}
       <button className="authBtn" onClick={() => onOpenModal()}>
         Login
       </button>

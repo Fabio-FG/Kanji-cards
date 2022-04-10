@@ -1,5 +1,5 @@
 .modal{
-    background-color: grey;
+    background-color: black;
     width: 350px;
     display: flex;
     flex-direction: column;
@@ -9,4 +9,62 @@
     top: 50%;
     margin: auto;
     height: 250px;
+}
+
+form{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+label{
+    text-align: left;
+    width: 70%;
+    margin-top: 0.8rem;
+    margin-bottom: 0.4rem;
+}
+
+input {
+    color: black !important;
+    width: 70%;
+}
+
+.btnWrapper{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.btnWrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cancelBtn{
+    background-color: rgb(222, 64, 64) !important;
+    margin: 10px;
+    padding: 8px;
+    width: 100px;
+    height: 50px;
+}
+
+.confirmBtn{
+    background-color: rgb(142, 142, 244);
+    margin: 10px;
+    padding: 8px;
+    width: 100px;
+    height: 50px;
+}
+
+.cancelX{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(222, 64, 64);
+    margin-left: auto;
+    padding: 5px;
 }
