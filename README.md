@@ -2,12 +2,14 @@
 
 A website dedicated to those who want to learn Japanese Kanji. The main functionality is to learn up to six new Kanji a day by using a random algorithm that shuffles and gets random Kanji from the database to learn. 
 
+Website: <a href="*">Demo</a> (Not available yet) 
+
 # Features
 <li> Kanji Randomization (every 24 hours) </li>
 <li> Shuffle Button to trigger randomization (if you already know the Kanji) </li>
 <li> Search for a specific word (based on Jisho.org) </li>
 
-# Future Implementations 
+# Backlog
 
 <li> Account setting and user profile </li>
 <li> Custom Kanji sets (saved by the users for specific Kanji) </li>
