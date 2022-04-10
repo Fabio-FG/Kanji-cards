@@ -1,12 +1,21 @@
+.modalOverlay{
+    position: fixed;
+    background-color: rgba(104, 78, 78, 0.418) !important;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    top: 0;
+    left: 0;
+}
+
 .modal{
     background-color: black;
     width: 350px;
-    display: flex;
     flex-direction: column;
     position: absolute;
     left: 0;
     right: 0;
-    top: 50%;
+    top: 20%;
     margin: auto;
     height: 250px;
 }

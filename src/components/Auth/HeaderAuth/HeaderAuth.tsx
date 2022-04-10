@@ -9,9 +9,6 @@ const HeaderAuth = () => {
         setOpenModal(true);
     } 
 
-    function onCloseModal(){
-        setOpenModal(false);
-    }
 
   return (
     <>
