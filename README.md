@@ -7,7 +7,7 @@ A website dedicated to those who want to learn Japanese Kanji. The main function
 <li> Shuffle Button to trigger randomization (if you already know the Kanji) </li>
 <li> Search for a specific word (based on Jisho.org) </li>
 
-#Future Implementations 
+# Future Implementations 
 
 <li> Account setting and user profile </li>
 <li> Custom Kanji sets (saved by the users for specific Kanji) </li>
