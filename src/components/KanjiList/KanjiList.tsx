@@ -1,5 +1,7 @@
+import { Button } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./KanjiList.css";
 
 const KanjiList = ({ data }: any) => {
   const [randomKanji, setRandomKanji] = useState<any>([]);
@@ -10,7 +12,7 @@ const KanjiList = ({ data }: any) => {
     const randomizeKanji = async () => {
       try {
         const randomArr = [];
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i < 3; i++) {
           // finding a random kanji out of the data set.
           const randomIndex = Math.floor(Math.random() * data.length);
           let randomKanji = data[randomIndex];
@@ -29,14 +31,19 @@ const KanjiList = ({ data }: any) => {
 
   return (
     <div>
-      <h1>Kanji List</h1>
+      <div className="title">
+        <h1>Kanji List</h1>
+      </div>
       <div>
-        <div>
-          the random six kanji:
+        <div className="kanjiWrapper">
           {randomKanji.map((kanji: any, idx: number) => {
             return (
-              <div key={kanji}>
-                <Link to={`/${kanji}`}> {kanji} </Link>
+              <div key={kanji} className="kanjiCard">
+                <Link to={`/${kanji}`} className="kanji-title">
+                  {" "}
+                  {kanji}{" "}
+                </Link>
+                <button className="learnBtn" onClick={() => {}}>Learn</button>
               </div>
             );
           })}
