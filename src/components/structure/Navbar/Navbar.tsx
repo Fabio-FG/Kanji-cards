@@ -42,7 +42,7 @@ const Navbar = () => {
             About
           </Link>
           <Link to="/learn" className="aboutLink">
-            Kanji
+            Learn Kanji
           </Link>
 
           {showAuthbar && <HeaderAuth /> }

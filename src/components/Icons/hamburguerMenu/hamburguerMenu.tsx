@@ -11,5 +11,5 @@ interface IconProps {
 }
 
 export const HamburguerIcon = (props: IconProps) => {
-    return <Icon {...props} />
+    return <Icon {...props} stroke-width="2"/>
 }

@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./KanjiList.css";
@@ -30,9 +29,9 @@ const KanjiList = ({ data }: any) => {
     randomizeKanji();
   }, [data]);
 
-  const goDetails = (kanji:string) => {
-     navigate(`/learn/${kanji}`)
-  }
+  const goDetails = (kanji: string) => {
+    navigate(`/learn/${kanji}`);
+  };
 
   return (
     <div>
@@ -48,7 +47,14 @@ const KanjiList = ({ data }: any) => {
                   {" "}
                   {kanji}{" "}
                 </Link>
-                <button className="learnBtn" onClick={() => {goDetails(kanji)}}>Learn</button>
+                <button
+                  className="learnBtn"
+                  onClick={() => {
+                    goDetails(kanji);
+                  }}
+                >
+                  Learn
+                </button>
               </div>
             );
           })}

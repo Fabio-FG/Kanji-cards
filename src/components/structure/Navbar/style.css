@@ -28,6 +28,7 @@
 .hamburguerIcon {
     margin-left: auto;
     cursor: pointer;
+    transform: scale(1.2);
 }
 
 .desktopHeader{
@@ -51,7 +52,7 @@
 
 @media screen and (min-width:928px){
     .hamburguerIcon {
-        display: flex;
+        display: none;
     }
 
     .desktopHeader{

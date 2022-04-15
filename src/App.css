@@ -1,8 +1,8 @@
-.container{
-    position: relative;
-    min-height: 100vh;
+.container {
+  position: relative;
+  min-height: 100vh;
 }
 
-.App{
-    padding-bottom: 2.5rem;
+.App {
+  padding-bottom: 2.5rem;
 }
