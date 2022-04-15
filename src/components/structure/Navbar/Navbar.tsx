@@ -34,7 +34,6 @@ const Navbar = () => {
             onClick={() => setShowSidebar(!showSidebar)}
           />
         </div>
-        {showSidebar && <p>test</p>}
         {showSidebar && <Sidebar onClose={() => setShowSidebar(false)} isOpen={() => setShowSidebar(true)} variant={"drawer"} />}
         <div className="desktopHeader">
           {" "}
