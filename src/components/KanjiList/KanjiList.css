@@ -19,7 +19,9 @@
   align-self: center;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
+  border-radius: 8px;
 }
 
 .kanji-title{
@@ -29,5 +31,12 @@
 }
 
 .learnBtn{
-    
+    background-color: white;
+    padding: 5px;
+    width: 100px;
+    color: red;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgb(119, 111, 111);
+    font-size: 1.5rem;    
 }
