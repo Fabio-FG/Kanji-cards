@@ -3,19 +3,21 @@ import "./App.css";
 import HomePage from "./pages/HomePage/HomePage";
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import DetailsPage from "./pages/DetailsPage/DetailsPage";
-import Sidebar from "./components/structure/Sidebar/Sidebar";
 import Navbar from "./components/structure/Navbar/Navbar";
+import { ChakraProvider } from "@chakra-ui/react";
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/:kanji" element={<DetailsPage />} />
-        </Routes>
-      </div>
+      <ChakraProvider>
+        <div className="App">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/:kanji" element={<DetailsPage />} />
+          </Routes>
+        </div>
+      </ChakraProvider>
     </Router>
   );
 }

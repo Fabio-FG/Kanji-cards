@@ -7,6 +7,18 @@ import Sidebar from "../Sidebar/Sidebar";
 
 const Navbar = () => {
   const [showSidebar, setShowSidebar] = useState<boolean>(false);
+  const [showAuthbar, setShowAuthbar] = useState<boolean>(false);
+  const [isSidebarOpen, setSidebarOpen] = useState(true)
+
+  const toggleSidebar = () => setSidebarOpen(!isSidebarOpen)
+
+  const SidebarClose = () => {
+    setShowSidebar(false);
+  }
+
+  const SidebarOpen = () => {
+    setShowSidebar(true);
+  }
 
   return (
     <div className="navbar">
@@ -22,14 +34,15 @@ const Navbar = () => {
             onClick={() => setShowSidebar(!showSidebar)}
           />
         </div>
-        {showSidebar && <Sidebar />}
+        {showSidebar && <p>test</p>}
+        {showSidebar && <Sidebar onClose={() => setShowSidebar(false)} isOpen={() => setShowSidebar(true)} variant={"drawer"} />}
         <div className="desktopHeader">
           {" "}
           {/* turn this into a component that takes 2 components - the regular navbar list and the auth component */}
           <Link to="/about" className="aboutLink">
-            About
+           {/*  About */}
           </Link>
-          <HeaderAuth />
+          {showAuthbar && <HeaderAuth /> }
         </div>
       </div>
     </div>
