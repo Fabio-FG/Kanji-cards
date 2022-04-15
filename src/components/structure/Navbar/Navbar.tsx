@@ -39,8 +39,12 @@ const Navbar = () => {
           {" "}
           {/* turn this into a component that takes 2 components - the regular navbar list and the auth component */}
           <Link to="/about" className="aboutLink">
-           {/*  About */}
+            About
           </Link>
+          <Link to="/learn" className="aboutLink">
+            Kanji
+          </Link>
+
           {showAuthbar && <HeaderAuth /> }
         </div>
       </div>

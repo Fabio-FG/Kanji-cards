@@ -1,10 +1,11 @@
-import { Button } from "@chakra-ui/react";
+
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./KanjiList.css";
 
 const KanjiList = ({ data }: any) => {
   const [randomKanji, setRandomKanji] = useState<any>([]);
+  let navigate = useNavigate();
 
   //Randomize data
 
@@ -29,6 +30,10 @@ const KanjiList = ({ data }: any) => {
     randomizeKanji();
   }, []);
 
+  const goDetails = (kanji:string) => {
+     navigate(`/${kanji}`)
+  }
+
   return (
     <div>
       <div className="title">
@@ -43,7 +48,7 @@ const KanjiList = ({ data }: any) => {
                   {" "}
                   {kanji}{" "}
                 </Link>
-                <button className="learnBtn" onClick={() => {}}>Learn</button>
+                <button className="learnBtn" onClick={() => {goDetails(kanji)}}>Learn</button>
               </div>
             );
           })}

@@ -1,4 +1,4 @@
-import "./AboutSection.css";
+import "./HeaderSection.css";
 import bg from "../../../assets/images/3506329.jpg";
 
 const AboutSection = () => {

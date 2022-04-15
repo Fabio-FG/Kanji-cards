@@ -1,0 +1,56 @@
+.wrapper{
+    background-color: pink;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+    margin-top: 150px;
+    height: 60vh;
+}
+
+.kanji{
+    background-color: red;
+    width: 300px;
+    font-size: 3em;
+    height: 55vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.info-container{
+    background-color: blue;
+    width: 65%;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.6rem;
+}
+
+.info-container p{
+    text-align: left;
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+.meanings-wrapper{
+    background-color: green;
+    display: flex;
+}
+
+.backBtn{
+    background-color: crimson;
+    width: 300px;
+    height: 80px;
+    font-size: 2em;
+    padding: 8px;
+    border-radius: 8px;
+    color: white;
+    margin-top: 1rem;
+
+}
