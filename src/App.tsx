@@ -6,18 +6,24 @@ import DetailsPage from "./pages/DetailsPage/DetailsPage";
 import Navbar from "./components/structure/Navbar/Navbar";
 import { ChakraProvider } from "@chakra-ui/react";
 import LearnPage from "./pages/LearnPage/LearnPage";
+import Footer from "./components/structure/Footer/Footer";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 function App() {
   return (
     <Router>
       <ChakraProvider>
-        <div className="App">
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/:kanji" element={<DetailsPage />} />
-            <Route path="/learn" element={<LearnPage />} />
-          </Routes>
+        <div className="container">
+          <div className="App">
+            <Navbar />
+            <Routes>
+              <Route path="*" element={<NotFoundPage />} />
+              <Route path="/" element={<HomePage />} />
+              <Route path="/learn/:kanji" element={<DetailsPage />} />
+              <Route path="/learn" element={<LearnPage />} />
+            </Routes>
+          </div>
+          <Footer />
         </div>
       </ChakraProvider>
     </Router>

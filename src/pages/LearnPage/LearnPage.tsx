@@ -1,5 +1,4 @@
 import KanjiList from "../../components/KanjiList/KanjiList";
-import AboutSection from "../../components/structure/HeaderSection/HeaderSection";
 import useFetch from "../../useFetch";
 
 const LearnPage = () => {

@@ -1,6 +1,6 @@
 import "./DetailsPage.css";
 import { useEffect, useState } from "react";
-import { unstable_HistoryRouter, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getKanji } from "../../Services/Services";
 import { Link } from "react-router-dom";
 

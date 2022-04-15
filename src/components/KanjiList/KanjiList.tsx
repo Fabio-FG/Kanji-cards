@@ -28,10 +28,10 @@ const KanjiList = ({ data }: any) => {
     };
 
     randomizeKanji();
-  }, []);
+  }, [data]);
 
   const goDetails = (kanji:string) => {
-     navigate(`/${kanji}`)
+     navigate(`/learn/${kanji}`)
   }
 
   return (
@@ -44,7 +44,7 @@ const KanjiList = ({ data }: any) => {
           {randomKanji.map((kanji: any, idx: number) => {
             return (
               <div key={kanji} className="kanjiCard">
-                <Link to={`/${kanji}`} className="kanji-title">
+                <Link to={`/learn/${kanji}`} className="kanji-title">
                   {" "}
                   {kanji}{" "}
                 </Link>
