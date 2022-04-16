@@ -41,37 +41,37 @@ const DetailsPage = () => {
         <div className="kanji">{details && details.kanji}</div>
         <div className="info-container">
           <div className="details-wrapper">
-            <p>Grade: {details && details.grade}</p>
-            <p>Stroke Count:{details && details.stroke_count}</p>
-            <p>JLPT level:{details && details.jlpt}</p>
+            <p className="grade">Grade: {details && details.grade}</p>
+            <p className="details"><b>Stroke Count:</b> {details && details.stroke_count}</p>
+            <p className="details"><b>JLPT level:</b>{details && details.jlpt}</p>
           </div>
           <div className="meanings-wrapper">
-            <div>
-              Meanings:{" "}
+            <div className="meanings-box">
+              <b>Meanings: </b>
               {details &&
                 details.meanings.map((el: string) => {
-                  return <div key={el}>{el}</div>;
+                  return <div className="meaningFormatting" key={el}>{el}. </div>;
                 })}
             </div>
-            <div>
-              Name readings:{" "}
+            <div className="meanings-box">
+              <b>Name readings: </b>
               {details &&
                 details.name_readings.map((el: string) => {
-                  return <div key={el}>{el}</div>;
+                  return <div className="meaningFormatting" key={el}>{el}. </div>;
                 })}
             </div>
-            <div>
-              Kunyomi readings:{" "}
+            <div className="meanings-box">
+              <b>Kunyomi readings:</b>
               {details &&
                 details.kun_readings.map((el: string) => {
-                  return <div key={el}>{el}</div>;
+                  return <div className="meaningFormatting" key={el}>{el}. </div>;
                 })}
             </div>
-            <div>
-              Onyomi readings:{" "}
+            <div className="meanings-box">
+              <b>Onyomi readings:</b>
               {details &&
                 details.on_readings.map((el: string) => {
-                  return <div key={el}>{el}</div>;
+                  return <div className="meaningFormatting" key={el}>{el}. </div>;
                 })}
             </div>
           </div>
