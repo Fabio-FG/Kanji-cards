@@ -1,6 +1,6 @@
 .navbar{
-    background-color: crimson;
-    color: white;
+
+    color: crimson;
     height: 100px;
     display: flex;
     flex-direction: row;
@@ -29,6 +29,7 @@
     margin-left: auto;
     cursor: pointer;
     transform: scale(1.2);
+    
 }
 
 .desktopHeader{

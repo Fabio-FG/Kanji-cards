@@ -9,6 +9,7 @@ import LearnPage from "./pages/LearnPage/LearnPage";
 import Footer from "./components/structure/Footer/Footer";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
+
 function App() {
   return (
     <Router>

@@ -1,3 +1,4 @@
+import { MoonIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
@@ -10,15 +11,23 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import './Sidebar.css'
+import "./Sidebar.css";
+import { useColorMode, useColorModeValue } from "@chakra-ui/react";
+
+
+
 
 interface SidebarProps {
   onClose: Function;
   isOpen: any;
   variant: "drawer" | "sidebar";
+
 }
 
+
+
 const SidebarContent = ({ onClick: Function }: any) => (
+  
   <VStack>
     <Button onClick={() => {}} w="100%">
       Home
@@ -29,10 +38,12 @@ const SidebarContent = ({ onClick: Function }: any) => (
     <Button onClick={() => {}} w="100%">
       Contacts
     </Button>
+    <MoonIcon onClick={() => console.log("moon")} />
   </VStack>
 );
 
 const Sidebar = ({ onClose, isOpen, variant }: SidebarProps) => {
+  
   return variant === "sidebar" ? (
     <Box
       position="fixed"
