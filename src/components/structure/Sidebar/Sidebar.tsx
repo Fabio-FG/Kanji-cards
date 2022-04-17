@@ -1,4 +1,4 @@
-import { MoonIcon } from "@chakra-ui/icons";
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
@@ -10,40 +10,62 @@ import {
   DrawerContent,
   VStack,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 import { useColorMode, useColorModeValue } from "@chakra-ui/react";
-
-
-
+import { Logo } from "../../Icons/logo/logo";
 
 interface SidebarProps {
   onClose: Function;
   isOpen: any;
   variant: "drawer" | "sidebar";
-
+  onNightToggle?: any;
+  showMoon?: any;
+  showSun? : any;
 }
 
+const SidebarContent = ({ onClose, onNightToggle, showSun, showMoon }: any) => {
+  const navigate = useNavigate();
 
-
-const SidebarContent = ({ onClick: Function }: any) => (
   
-  <VStack>
-    <Button onClick={() => {}} w="100%">
-      Home
-    </Button>
-    <Button onClick={() => {}} w="100%">
-      About
-    </Button>
-    <Button onClick={() => {}} w="100%">
-      Contacts
-    </Button>
-    <MoonIcon onClick={() => console.log("moon")} />
-  </VStack>
-);
+  return (
+    <VStack>
+      <Button
+        onClick={() => {
+          navigate("/");
+          onClose();
+        }}
+        w="100%"
+      >
+        Home
+      </Button>
+      <Button onClick={() => {}} w="100%">
+        About
+      </Button>
+      <Button
+        onClick={() => {
+          navigate("/learn");
+          onClose();
+        }}
+        w="100%"
+      >
+        Learn Kanji
+      </Button>
+      <Button onClick={() => {}} w="100%">
+        Contacts
+      </Button>
+      {showMoon && <MoonIcon onClick={onNightToggle} />}
+      {showSun && <SunIcon onClick={onNightToggle} />}
+    </VStack>
+  );
+};
 
-const Sidebar = ({ onClose, isOpen, variant }: SidebarProps) => {
-  
+const Sidebar = ({ onClose, isOpen, variant, onNightToggle, showMoon, showSun }: SidebarProps) => {
+  let navigate = useNavigate();
+ 
+  const goHomepage = () => {
+    navigate("/");
+  };
   return variant === "sidebar" ? (
     <Box
       position="fixed"
@@ -54,22 +76,25 @@ const Sidebar = ({ onClose, isOpen, variant }: SidebarProps) => {
       h="100%"
       bg="#dfdfdf"
     >
-      <SidebarContent onClick={() => onClose()} />
+      <SidebarContent />
     </Box>
   ) : (
-    <div className="test">
-      <Drawer isOpen={isOpen} placement="right" onClose={() => onClose()}>
-        <DrawerOverlay>
-          <DrawerContent background="crimson" maxW={"350px"}>
-            <DrawerCloseButton />
-            <DrawerHeader color="white">LearnKanji</DrawerHeader>
-            <DrawerBody>
-              <SidebarContent onClick={() => onClose} />
-            </DrawerBody>
-          </DrawerContent>
-        </DrawerOverlay>
-      </Drawer>
-    </div>
+    <Drawer isOpen={isOpen} placement="right" onClose={() => onClose()}>
+      <DrawerOverlay>
+        <DrawerContent background="crimson" maxW={"350px"}>
+          <DrawerCloseButton />
+          <DrawerHeader color="white">
+            <div className="logo-container">
+              <Logo className="logo-sidebar" onClick={() => goHomepage()} />
+              <span>LearnKanji</span>
+            </div>
+          </DrawerHeader>
+          <DrawerBody>
+            <SidebarContent onClose={onClose} onNightToggle={onNightToggle} showMoon={showMoon} showSun={showSun}/>
+          </DrawerBody>
+        </DrawerContent>
+      </DrawerOverlay>
+    </Drawer>
   );
 };
 

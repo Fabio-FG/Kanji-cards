@@ -63,6 +63,9 @@ const Navbar = () => {
             onClose={() => setShowSidebar(false)}
             isOpen={() => setShowSidebar(true)}
             variant={"drawer"}
+            onNightToggle={onNightToggle}
+            showMoon={showMoon}
+            showSun={showSun}
           />
         )}
         <div className="desktopHeader">
