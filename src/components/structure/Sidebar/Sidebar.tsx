@@ -10,7 +10,7 @@ import {
   DrawerContent,
   VStack,
 } from "@chakra-ui/react";
-import { Navigate, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 import { useColorMode, useColorModeValue } from "@chakra-ui/react";
 import { Logo } from "../../Icons/logo/logo";

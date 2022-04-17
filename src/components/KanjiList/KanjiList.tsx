@@ -15,6 +15,7 @@ const KanjiList = ({ data }: any) => {
     randomizeKanji();
   }, []);
 
+  //Randomize data
   const randomizeKanji = useCallback(() => {
     const randomArr = [];
     for (let i = 0; i < 3; i++) {
@@ -28,8 +29,10 @@ const KanjiList = ({ data }: any) => {
     //set the kanji state to have the 6 kanji!
     setRandomKanji(randomArr);
     setStoredRandomKanji([...randomArr]);
-    let storagedKanji = localStorage.setItem('kanji', JSON.stringify(randomArr));
-    
+    let storagedKanji = localStorage.setItem(
+      "kanji",
+      JSON.stringify(randomArr)
+    );
   }, []);
 
   useEffect(() => {
@@ -38,21 +41,6 @@ const KanjiList = ({ data }: any) => {
     return () => clearInterval(interval);
   }, [spreadData]);
 
-  //Randomize data
-
-  /*
-  const saveToLocalStorage = useCallback((updatedData) => {
-    localStorage.setItem(
-      `kanji`,
-      JSON.stringify("kanji")
-    );
-}, []); 
-
-  useEffect(() => {
-    const interval = setInterval(randomizeKanji, 5000);
-    return () => clearInterval(interval);
-  }, [data]);
- */
   const goDetails = (kanji: string) => {
     navigate(`/learn/${kanji}`);
   };
@@ -61,12 +49,15 @@ const KanjiList = ({ data }: any) => {
     <div>
       <div className="title">
         <h1>Kanji List</h1>
-        <RepeatIcon
-          className="repeat"
-          onClick={() => {
-            randomizeKanji();
-          }}
-        />
+        <div className="shuffle-box">
+          <span>Shuffle</span> 
+          <RepeatIcon
+            className="repeat"
+            onClick={() => {
+              randomizeKanji();
+            }}
+          />
+        </div>
       </div>
       <div>
         <div className="kanjiWrapper">
