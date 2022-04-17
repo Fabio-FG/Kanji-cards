@@ -6,7 +6,7 @@ const AboutSection = () => {
     <>
       <div className="about-container">
         <div className="header-title">
-          <h1>Learn Kanji every day with KanjiLearnAPI</h1>
+          <h1>Learn every day with KanjiLearnAPI</h1>
           <button>Learn More</button>
         </div>
         <div className="header-image">

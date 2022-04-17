@@ -65,7 +65,9 @@ const Sidebar = ({ onClose, isOpen, variant, onNightToggle, showMoon, showSun }:
  
   const goHomepage = () => {
     navigate("/");
+    onClose()
   };
+  
   return variant === "sidebar" ? (
     <Box
       position="fixed"
@@ -83,10 +85,10 @@ const Sidebar = ({ onClose, isOpen, variant, onNightToggle, showMoon, showSun }:
       <DrawerOverlay>
         <DrawerContent background="crimson" maxW={"350px"}>
           <DrawerCloseButton />
-          <DrawerHeader color="white">
+          <DrawerHeader >
             <div className="logo-container">
               <Logo className="logo-sidebar" onClick={() => goHomepage()} />
-              <span>LearnKanji</span>
+              <span>LearnKanji <small>漢字</small></span>
             </div>
           </DrawerHeader>
           <DrawerBody>
