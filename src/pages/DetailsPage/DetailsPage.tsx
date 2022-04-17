@@ -2,7 +2,7 @@ import "./DetailsPage.css";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getKanji } from "../../Services/Services";
-import { Link } from "react-router-dom";
+
 
 const DetailsPage = () => {
   //useParams to grab the id

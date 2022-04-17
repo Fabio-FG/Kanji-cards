@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 import { HamburguerIcon } from "../../Icons/hamburguerMenu/hamburguerMenu";
 import HeaderAuth from "../../Auth/HeaderAuth/HeaderAuth";
 import Sidebar from "../Sidebar/Sidebar";
-import ToggleButton from "../../Icons/ToggleButton/ToggleButton";
-import { useColorMode, useColorModeValue } from "@chakra-ui/react";
+import { useColorMode } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 const Navbar = () => {
@@ -41,7 +40,7 @@ const Navbar = () => {
       <div className="headerContainer">
         <div className="hamburguerIcon">
           <HamburguerIcon
-            stroke="black"
+            stroke="crimson"
             className="hamburguerIcon"
             onClick={() => setShowSidebar(!showSidebar)}
           />
