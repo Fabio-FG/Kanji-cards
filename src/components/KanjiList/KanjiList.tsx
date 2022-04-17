@@ -1,3 +1,4 @@
+import { RepeatIcon } from "@chakra-ui/icons";
 import { useCallback, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./KanjiList.css";
@@ -8,11 +9,11 @@ const KanjiList = ({ data }: any) => {
   let navigate = useNavigate();
 
   let spreadData = [...data];
-  
+
   //make sure that info is always send on first render
   useEffect(() => {
-    randomizeKanji()
-  }, [])
+    randomizeKanji();
+  }, []);
 
   const randomizeKanji = useCallback(() => {
     const randomArr = [];
@@ -27,18 +28,19 @@ const KanjiList = ({ data }: any) => {
     //set the kanji state to have the 6 kanji!
     setRandomKanji(randomArr);
     setStoredRandomKanji([...randomArr]);
+    let storagedKanji = localStorage.setItem('kanji', JSON.stringify(randomArr));
     
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(randomizeKanji, 5000);
+    const dayInMilliseconds: number = 1000 * 60 * 60 * 24;
+    const interval = setInterval(randomizeKanji, dayInMilliseconds);
     return () => clearInterval(interval);
   }, [spreadData]);
 
-  
   //Randomize data
-  
-/*
+
+  /*
   const saveToLocalStorage = useCallback((updatedData) => {
     localStorage.setItem(
       `kanji`,
@@ -59,6 +61,12 @@ const KanjiList = ({ data }: any) => {
     <div>
       <div className="title">
         <h1>Kanji List</h1>
+        <RepeatIcon
+          className="repeat"
+          onClick={() => {
+            randomizeKanji();
+          }}
+        />
       </div>
       <div>
         <div className="kanjiWrapper">
