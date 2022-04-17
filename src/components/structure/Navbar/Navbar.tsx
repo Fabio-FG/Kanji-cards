@@ -6,9 +6,8 @@ import HeaderAuth from "../../Auth/HeaderAuth/HeaderAuth";
 import Sidebar from "../Sidebar/Sidebar";
 import { useColorMode } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-import logo from '../../../assets/images/logo_v3.svg'
+import logo from "../../../assets/images/logo_v3.svg";
 import { Logo } from "../../Icons/logo/logo";
-
 
 const Navbar = () => {
   const [showSidebar, setShowSidebar] = useState<boolean>(false);
@@ -30,19 +29,27 @@ const Navbar = () => {
 
   const onNightToggle = () => {
     toggleColorMode();
-    setShowMoon(!showMoon)
-    setShowSun(!showSun)
+    setShowMoon(!showMoon);
+    setShowSun(!showSun);
   };
 
   return (
     <div className="navbar">
-      {showSun && <div className="logo">
-         <Link to="/"><Logo className="logo-pic"/></Link>
-      </div>}
+      {showSun && (
+        <div className="logo">
+          <Link to="/">
+            <Logo className="logo-pic" />
+          </Link>
+        </div>
+      )}
       {/* <div className="logo-title"> LearnJP</div> */}
-      {showMoon && <div className="logo-day">
-      <Link to="/"><Logo className="logo-pic"/></Link>
-      </div>}
+      {showMoon && (
+        <div className="logo-day">
+          <Link to="/">
+            <Logo className="logo-pic" />
+          </Link>
+        </div>
+      )}
       <div className="headerContainer">
         <div className="hamburguerIcon">
           <HamburguerIcon
@@ -59,14 +66,6 @@ const Navbar = () => {
           />
         )}
         <div className="desktopHeader">
-          {showMoon && (
-            <MoonIcon
-              onClick={() => {
-                onNightToggle();
-              }}
-            />
-          )}
-          {showSun && <SunIcon onClick={() => {onNightToggle()}}/>}
           {/* turn this into a component that takes 2 components - the regular navbar list and the auth component */}
           <Link to="/about" className="aboutLink">
             About
@@ -74,6 +73,22 @@ const Navbar = () => {
           <Link to="/learn" className="aboutLink">
             Learn Kanji
           </Link>
+          {showMoon && (
+            <MoonIcon
+              className="toggleIcon"
+              onClick={() => {
+                onNightToggle();
+              }}
+            />
+          )}
+          {showSun && (
+            <SunIcon
+              className="toggleIcon"
+              onClick={() => {
+                onNightToggle();
+              }}
+            />
+          )}
 
           {showAuthbar && <HeaderAuth />}
         </div>

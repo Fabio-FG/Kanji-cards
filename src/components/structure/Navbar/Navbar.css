@@ -33,7 +33,9 @@
   transform: scale(2);
 }
 
-
+.toggleIcon{
+  margin-left: 12px;
+}
 
 .logo-title {
   margin-top: 15px;
