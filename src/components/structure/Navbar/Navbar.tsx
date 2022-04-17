@@ -1,4 +1,4 @@
-import "./style.css";
+import "./Navbar.css";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { HamburguerIcon } from "../../Icons/hamburguerMenu/hamburguerMenu";
@@ -6,6 +6,9 @@ import HeaderAuth from "../../Auth/HeaderAuth/HeaderAuth";
 import Sidebar from "../Sidebar/Sidebar";
 import { useColorMode } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+import logo from '../../../assets/images/logo_v3.svg'
+import { Logo } from "../../Icons/logo/logo";
+
 
 const Navbar = () => {
   const [showSidebar, setShowSidebar] = useState<boolean>(false);
@@ -33,10 +36,13 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <div className="logo">
-        <Link to="/">LearnKanji</Link>
-      </div>
-
+      {showSun && <div className="logo">
+         <Link to="/"><Logo className="logo-pic"/></Link>
+      </div>}
+      {/* <div className="logo-title"> LearnJP</div> */}
+      {showMoon && <div className="logo-day">
+      <Link to="/"><Logo className="logo-pic"/></Link>
+      </div>}
       <div className="headerContainer">
         <div className="hamburguerIcon">
           <HamburguerIcon
