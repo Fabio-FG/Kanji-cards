@@ -1,34 +1,56 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./KanjiList.css";
 
 const KanjiList = ({ data }: any) => {
   const [randomKanji, setRandomKanji] = useState<any>([]);
+  const [storedRandomKanji, setStoredRandomKanji] = useState<any>([]);
   let navigate = useNavigate();
 
-  //Randomize data
+  let spreadData = [...data];
+  
+  //make sure that info is always send on first render
+  useEffect(() => {
+    randomizeKanji()
+  }, [])
+
+  const randomizeKanji = useCallback(() => {
+    const randomArr = [];
+    for (let i = 0; i < 3; i++) {
+      // finding a random kanji out of the data set.
+      const randomIndex = Math.floor(Math.random() * data.length);
+      let randomKanji = spreadData[randomIndex];
+
+      //pushing a random kanji to a new array until there are 6 random kanji
+      randomArr.push(randomKanji);
+    }
+    //set the kanji state to have the 6 kanji!
+    setRandomKanji(randomArr);
+    setStoredRandomKanji([...randomArr]);
+    
+  }, []);
 
   useEffect(() => {
-    const randomizeKanji = async () => {
-      try {
-        const randomArr = [];
-        for (let i = 0; i < 3; i++) {
-          // finding a random kanji out of the data set.
-          const randomIndex = Math.floor(Math.random() * data.length);
-          let randomKanji = data[randomIndex];
+    const interval = setInterval(randomizeKanji, 5000);
+    return () => clearInterval(interval);
+  }, [spreadData]);
 
-          //pushing a random kanji to a new array until there are 6 random kanji
-          randomArr.push(randomKanji);
-        }
-        //set the kanji state to have the 6 kanji!
-        setRandomKanji(randomArr);
-      } catch (error) {}
-      return "error with the code";
-    };
+  
+  //Randomize data
+  
+/*
+  const saveToLocalStorage = useCallback((updatedData) => {
+    localStorage.setItem(
+      `kanji`,
+      JSON.stringify("kanji")
+    );
+}, []); 
 
-    randomizeKanji();
+  useEffect(() => {
+    const interval = setInterval(randomizeKanji, 5000);
+    return () => clearInterval(interval);
   }, [data]);
-
+ */
   const goDetails = (kanji: string) => {
     navigate(`/learn/${kanji}`);
   };
