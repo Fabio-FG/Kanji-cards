@@ -2,9 +2,9 @@ import React from "react";
 import './Homepage.css';
 import useFetch from "../../useFetch";
 import KanjiList from "../../components/KanjiList/KanjiList";
-import HeaderSection from "../../components/structure/HeaderSection/HeaderSection";
+/* import HeaderSection from "../../components/structure/HeaderSection/HeaderSection";
 import AboutSection from "../../components/structure/AboutSection/AboutSection";
-import bg from "../../assets/images/WallpaperDog-10848836.jpg"
+import bg from "../../assets/images/WallpaperDog-10848836.jpg" */
 
 const HomePage = () => {
   //custom hook to fetch data
@@ -14,7 +14,7 @@ const HomePage = () => {
 
   return (
     <>
-      {error && <div>{error}</div>}
+      {/* {error && <div>{error}</div>}
       {!isPending && <div>Loading...</div>}
       <div className="container">
         <div>
@@ -22,9 +22,9 @@ const HomePage = () => {
           <HeaderSection />
           <AboutSection />
         </div>
-        <h3 className="kanji-subtitle">An example of how the app works</h3>
+        <h3 className="kanji-subtitle">An example of how the app works</h3> */}
         <div className="data">{data && <KanjiList {...data!} />}</div>
-      </div>
+      {/* </div> */}
     </>
   );
 };
