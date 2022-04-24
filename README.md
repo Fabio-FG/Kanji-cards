@@ -2,12 +2,20 @@
 
 A website dedicated to those who want to learn Japanese Kanji. The main functionality is to learn up to six new Kanji a day by using a random algorithm that shuffles and gets random Kanji from the database to learn. 
 
-Website: <a href="https://kanji-cards.pages.dev/" target:_blank>Demo</a>
+<br/>
+<img src="https://i.ibb.co/NYkXCwz/learnkanji.png" border="0" alt="kanji website preview"/>
+
+<h3>Night Mode Preview</h3>
+
+<img src="https://i.ibb.co/N2ZKVht/learnkanji2.png" alt="kanji website night mode preview" border="0">
+<h2 align="center">Website: <a href="https://kanji-cards.pages.dev/" target:_blank>Demo</a></h2>
+<br/>
 
 # Features
-<li> Kanji Randomization (every 24 hours) </li>
+<li> Kanji Randomization (every 24 hours) -In Progress </li>
 <li> Shuffle Button to trigger randomization (if you already know the Kanji) </li>
-<li> Search for a specific word (based on Jisho.org) </li>
+<li> Search for a specific word (based on Jisho.org) - Phase 2/Backlog </li>
+<li> Dark Mode </li>
 
 # Backlog
 
