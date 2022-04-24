@@ -1,8 +1,8 @@
 import React from "react";
+import './Homepage.css';
 import useFetch from "../../useFetch";
 import KanjiList from "../../components/KanjiList/KanjiList";
 import HeaderSection from "../../components/structure/HeaderSection/HeaderSection";
-import "./HomePage.css";
 import AboutSection from "../../components/structure/AboutSection/AboutSection";
 import bg from "../../assets/images/WallpaperDog-10848836.jpg"
 import { ChevronUpIcon } from "@chakra-ui/icons";
