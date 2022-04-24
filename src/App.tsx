@@ -7,7 +7,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import LearnPage from "./pages/LearnPage/LearnPage";
 import Footer from "./components/structure/Footer/Footer";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
-/* import HomePage from "./pages/HomePage/HomePage"; */
+import HomePage from "./pages/HomePage/HomePage";
 
 
 
@@ -20,7 +20,7 @@ function App() {
             <Navbar />
             <Routes>
               <Route path="*" element={<NotFoundPage />} />
-             {/*  <Route path="/" element={<HomePage />} /> */}
+              <Route path="/" element={<HomePage />} />
               <Route path="/learn/:kanji" element={<DetailsPage />} />
               <Route path="/learn" element={<LearnPage />} />
             </Routes>
