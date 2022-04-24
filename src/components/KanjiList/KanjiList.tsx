@@ -22,6 +22,7 @@ const KanjiList = ({ data }: any) => {
       randomArr.push(randomKanji);
     }
     //set the kanji state to have the 6 kanji!
+    console.log("random", randomKanji)    
     setRandomKanji(randomArr);
     /* setStoredRandomKanji([...randomArr]); */
     /* let storagedKanji = localStorage.setItem(
