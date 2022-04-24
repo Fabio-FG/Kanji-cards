@@ -2,7 +2,7 @@
 
 A website dedicated to those who want to learn Japanese Kanji. The main functionality is to learn up to six new Kanji a day by using a random algorithm that shuffles and gets random Kanji from the database to learn. 
 
-Website: <a href="*">Demo</a> (Not available yet) 
+Website: <a href="https://kanji-cards.pages.dev/" target:_blank>Demo</a>
 
 # Features
 <li> Kanji Randomization (every 24 hours) </li>
