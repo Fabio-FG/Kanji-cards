@@ -6,26 +6,17 @@ import HeaderAuth from "../../Auth/HeaderAuth/HeaderAuth";
 import Sidebar from "../Sidebar/Sidebar";
 import { useColorMode } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-import logo from "../../../assets/images/logo_v3.svg";
+
 import { Logo } from "../../Icons/logo/logo";
 
 const Navbar = () => {
   const [showSidebar, setShowSidebar] = useState<boolean>(false);
   const [showAuthbar, setShowAuthbar] = useState<boolean>(false);
-  const [isSidebarOpen, setSidebarOpen] = useState(true);
   const [showMoon, setShowMoon] = useState<boolean>(true);
   const [showSun, setShowSun] = useState<boolean>(false);
 
-  const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
   const { toggleColorMode } = useColorMode();
 
-  const SidebarClose = () => {
-    setShowSidebar(false);
-  };
-
-  const SidebarOpen = () => {
-    setShowSidebar(true);
-  };
 
   const onNightToggle = () => {
     toggleColorMode();

@@ -1,5 +1,5 @@
 import React, { MouseEventHandler } from "react";
-import { ReactComponent as Icon } from "../../../assets/images/logo_v3.svg";
+import { ReactComponent as Icon } from "../../../assets/images/logov8.svg";
 
 
 //interface to style the icon
