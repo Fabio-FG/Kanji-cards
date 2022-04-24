@@ -7,6 +7,7 @@
     height: auto;
     text-align: justify;
     font-size:1.4em;
+    justify-content: center;
 }
 
 .about-title{
@@ -17,9 +18,15 @@
 
 }
 
+.about-intro{
+    width: 80%;
+    margin-bottom: 100px;
+}
 .phase-box{
     margin-top: 12px;
-    
+    margin-bottom: 50px;
+    width: 80%;
+
 }
 
 .phase-box h3{

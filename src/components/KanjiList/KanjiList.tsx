@@ -5,15 +5,10 @@ import "./KanjiList.css";
 
 const KanjiList = ({ data }: any) => {
   const [randomKanji, setRandomKanji] = useState<any>([]);
-  const [storedRandomKanji, setStoredRandomKanji] = useState<any>([]);
+  /* const [storedRandomKanji, setStoredRandomKanji] = useState<any>([]); */
   let navigate = useNavigate();
 
   let spreadData = [...data];
-
-  //make sure that info is always send on first render
-  useEffect(() => {
-    randomizeKanji();
-  }, []);
 
   //Randomize data
   const randomizeKanji = useCallback(() => {
@@ -28,18 +23,24 @@ const KanjiList = ({ data }: any) => {
     }
     //set the kanji state to have the 6 kanji!
     setRandomKanji(randomArr);
-    setStoredRandomKanji([...randomArr]);
-    let storagedKanji = localStorage.setItem(
+    /* setStoredRandomKanji([...randomArr]); */
+    /* let storagedKanji = localStorage.setItem(
       "kanji",
       JSON.stringify(randomArr)
-    );
+    ); */
+  }, [spreadData, data.length]);
+
+  //make sure that info is always send on first render
+  useEffect(() => {
+    randomizeKanji();
   }, []);
 
-  useEffect(() => {
+  // This will be dealt in the backend
+  /* useEffect(() => {
     const dayInMilliseconds: number = 1000 * 60 * 60 * 24;
     const interval = setInterval(randomizeKanji, dayInMilliseconds);
     return () => clearInterval(interval);
-  }, [spreadData]);
+  }, [spreadData]); */
 
   const goDetails = (kanji: string) => {
     navigate(`/learn/${kanji}`);
@@ -49,14 +50,14 @@ const KanjiList = ({ data }: any) => {
     <div>
       <div className="title">
         <h1>Kanji List</h1>
-        <div className="shuffle-box">
-          <span>Shuffle</span> 
-          <RepeatIcon
-            className="repeat"
-            onClick={() => {
-              randomizeKanji();
-            }}
-          />
+        <div
+          className="shuffle-box"
+          onClick={() => {
+            randomizeKanji();
+          }}
+        >
+          <span>Shuffle</span>
+          <RepeatIcon className="repeat" />
         </div>
       </div>
       <div>
