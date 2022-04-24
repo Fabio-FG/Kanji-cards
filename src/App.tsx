@@ -10,7 +10,6 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import HomePage from "./pages/HomePage/HomePage";
 
 
-
 function App() {
   return (
     <Router>
