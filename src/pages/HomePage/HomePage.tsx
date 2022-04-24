@@ -1,5 +1,5 @@
 import React from "react";
-import './Homepage.css';
+import './HomePage.css';
 import useFetch from "../../useFetch";
 import KanjiList from "../../components/KanjiList/KanjiList";
 import HeaderSection from "../../components/structure/HeaderSection/HeaderSection";
