@@ -3,11 +3,11 @@
 A website dedicated to those who want to learn Japanese Kanji. The main functionality is to learn up to six new Kanji a day by using a random algorithm that shuffles and gets random Kanji from the database to learn. 
 
 <br/>
-<img src="https://i.ibb.co/NYkXCwz/learnkanji.png" border="0" alt="kanji website preview"/>
+<a href="https://kanji-cards.pages.dev/"><img src="https://i.ibb.co/NYkXCwz/learnkanji.png" border="0" alt="kanji website preview"/></a>
 
 <h3>Night Mode Preview</h3>
 
-<img src="https://i.ibb.co/N2ZKVht/learnkanji2.png" alt="kanji website night mode preview" border="0">
+<a href="https://kanji-cards.pages.dev/"><img src="https://i.ibb.co/N2ZKVht/learnkanji2.png" alt="kanji website night mode preview" border="0"></a>
 <h2 align="center">Website: <a href="https://kanji-cards.pages.dev/" target:_blank>Demo</a></h2>
 <br/>
 
