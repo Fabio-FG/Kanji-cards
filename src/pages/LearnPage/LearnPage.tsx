@@ -1,5 +1,5 @@
 import KanjiList from "../../components/KanjiList/KanjiList";
-import useFetch from "../../useFetch";
+import useFetch from "../../Hooks/useFetch";
 
 const LearnPage = () => {
   //custom hook to fetch data

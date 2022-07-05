@@ -1,6 +1,6 @@
 import React from "react";
 import './HomePage.css';
-import useFetch from "../../useFetch";
+import useFetch from "../../Hooks/useFetch";
 import KanjiList from "../../components/KanjiList/KanjiList";
 import HeaderSection from "../../components/structure/HeaderSection/HeaderSection";
 import AboutSection from "../../components/structure/AboutSection/AboutSection";
