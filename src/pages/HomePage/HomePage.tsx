@@ -12,6 +12,7 @@ const HomePage = () => {
     "https://kanjiapi.dev/v1/kanji/all"
   );
 
+
   return (
     <>
       {error && <div>{error}</div>}
@@ -23,7 +24,7 @@ const HomePage = () => {
           <AboutSection />
         </div>
         <h3 className="kanji-subtitle">An example of how the app works</h3>
-        <div className="data">{data && <KanjiList {...data!} />}</div>
+        <div className="data">{data && <KanjiList {...data as Object} />}</div>
       </div>
     </>
   );

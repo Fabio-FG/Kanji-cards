@@ -1,3 +1,37 @@
+
+
+.about{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+    height: auto;
+    font-size:1.5em;
+    justify-content: center;
+    background-color: crimson;
+    /* create an SVG wavy */
+}
+
+.about-intro{
+    width: 70%;
+    margin-bottom: 100px;
+    text-align: justify;
+}
+
+.about-title{
+    color:rgb(31, 27, 27);
+    font-size: 1.7em;
+    font-weight:bold;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.about-text{
+    width: 80%;
+    background-color: red;
+}
+
 p{
     font-size: 1.2em;
 }
@@ -14,8 +48,8 @@ p{
 }
 
 .span{
-    color: crimson;
     font-size: unset;
     text-decoration: underline;
+    cursor: pointer;
     
 }

@@ -8,10 +8,9 @@ const KanjiList = ({ data }: any) => {
   /* const [storedRandomKanji, setStoredRandomKanji] = useState<any>([]); */
   let navigate = useNavigate();
 
-  let spreadData = [...data];
-
   //Randomize data
   const randomizeKanji = useCallback(() => {
+    let spreadData = [...data];
     const randomArr = [];
     for (let i = 0; i < 3; i++) {
       // finding a random kanji out of the data set.
@@ -22,26 +21,14 @@ const KanjiList = ({ data }: any) => {
       randomArr.push(randomKanji);
     }
     //set the kanji state to have the 6 kanji!
-    console.log("random", randomKanji)    
+
     setRandomKanji(randomArr);
-    /* setStoredRandomKanji([...randomArr]); */
-    /* let storagedKanji = localStorage.setItem(
-      "kanji",
-      JSON.stringify(randomArr)
-    ); */
-  }, [spreadData, data.length]);
+  }, [data]);
 
   //make sure that info is always send on first render
   useEffect(() => {
     randomizeKanji();
-  }, []);
-
-  // This will be dealt in the backend
-  /* useEffect(() => {
-    const dayInMilliseconds: number = 1000 * 60 * 60 * 24;
-    const interval = setInterval(randomizeKanji, dayInMilliseconds);
-    return () => clearInterval(interval);
-  }, [spreadData]); */
+  }, [randomizeKanji]);
 
   const goDetails = (kanji: string) => {
     navigate(`/learn/${kanji}`);
@@ -67,8 +54,7 @@ const KanjiList = ({ data }: any) => {
             return (
               <div key={kanji} className="kanjiCard">
                 <Link to={`/learn/${kanji}`} className="kanji-title">
-                  {" "}
-                  {kanji}{" "}
+                  {kanji}
                 </Link>
                 <button
                   className="learnBtn"
