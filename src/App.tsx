@@ -8,6 +8,7 @@ import LearnPage from "./pages/LearnPage/LearnPage";
 import Footer from "./components/structure/Footer/Footer";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import HomePage from "./pages/HomePage/HomePage";
+import AboutPage from "./pages/AboutPage/AboutPage";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/learn/:kanji" element={<DetailsPage />} />
               <Route path="/learn" element={<LearnPage />} />
+              <Route path="/about" element={<AboutPage />} />
             </Routes>
           </div>
           <Footer />

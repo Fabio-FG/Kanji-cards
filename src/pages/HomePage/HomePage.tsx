@@ -3,8 +3,8 @@ import './HomePage.css';
 import useFetch from "../../Hooks/useFetch";
 import KanjiList from "../../components/KanjiList/KanjiList";
 import HeaderSection from "../../components/structure/HeaderSection/HeaderSection";
-import AboutSection from "../../components/structure/AboutSection/AboutSection";
 import bg from "../../assets/images/WallpaperDog-10848836.jpg"
+import AboutSection from "../../components/structure/AboutSection/AboutSection";
 
 const HomePage = () => {
   //custom hook to fetch data

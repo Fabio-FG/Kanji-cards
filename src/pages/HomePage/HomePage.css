@@ -15,12 +15,13 @@
 }
 
 .kanji-subtitle{
-    text-align: left;
-    margin-left: 10%;
+    text-align: center;
     margin-top: 100px;
     margin-bottom: 60px;
-    font-size: 2em;
+    font-size: 3em;
 }
+
+
 
 @media only screen and (min-width: 492px){
     .homepageBg{
